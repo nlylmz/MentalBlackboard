@@ -20,26 +20,21 @@ folds/unfolds, and spatial visualization to imagine and manipulate objects.
 
 ---
 
+## Prediction
+Predict the final hole configuration after unfolding, given the folding sequence and initial hole properties.
+
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/user-attachments/assets/bdbb1e96-ed76-4908-bcf3-6415f69aac64">
-        <img src="https://github.com/user-attachments/assets/5fc82471-3e0b-4a1b-a065-70d39125e02f" width="400" />
-      </a><br/>
+      <img src="https://github.com/user-attachments/assets/0e552c59-910e-4e89-b1b3-e58d521a6457" width="350" /><br/>
       <sub><b>Prediction — Problem</b></sub>
     </td>
     <td align="center">
-      <a href="https://github.com/user-attachments/assets/b133fb2a-af29-4b96-a239-67fe9a736528">
-        <img src="https://github.com/user-attachments/assets/5fc82471-3e0b-4a1b-a065-70d39125e02f" width="400" />
-      </a><br/>
+      <img src="https://github.com/user-attachments/assets/5e421ec7-a6ab-471d-922a-2db90612a794" width="350" /><br/>
       <sub><b>Prediction — Solution</b></sub>
     </td>
   </tr>
 </table>
-
-
-
-
 
 
 ## 📢 News  
@@ -55,9 +50,17 @@ folds/unfolds, and spatial visualization to imagine and manipulate objects.
 - 🔥 **Rule-Based Transformations**: MentalBlackboard contains symmetry and rotation transformations that define rule-governed spatial manipulations and support systematic reasoning processes.
 ---
 
-##  MentalBlackboard
+##  MentalBlackboard Benchmark
 
 MentalBlackboard is built with an automated, physically grounded pipeline based on a 3D paper-folding and hole-punching simulation (VPython). Folding, rotation, punching, and unfolding are executed under strict physical constraints to avoid deformation or self-intersection, and the paper is discretized into triangular regions to support diagonal and multi-stage folds.
+
+<img src="https://github.com/user-attachments/assets/14665ada-a2d3-45c6-b05f-db19c46b4807" width="800" />
+
+## Results
+We evaluate state-of-the-art Vision-Language Models in a zero-shot setting across video-, image-, and text-based prediction tasks and 2D planning tasks. Performance is measured using Exact Match and a custom Partial Accuracy metric designed for open-ended spatial predictions. The prediction task evaluation results are provided in the table below.
+
+![Screenshot 2026-02-18 144330](https://github.com/user-attachments/assets/16542c93-f3da-415e-9a86-0dad80c7f814)
+
 
 
 ## 🔧 Usage 
