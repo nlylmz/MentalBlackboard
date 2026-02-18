@@ -20,6 +20,27 @@ folds/unfolds, and spatial visualization to imagine and manipulate objects.
 
 ---
 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/user-attachments/assets/bdbb1e96-ed76-4908-bcf3-6415f69aac64">
+        <img src="https://github.com/user-attachments/assets/5fc82471-3e0b-4a1b-a065-70d39125e02f" width="400" />
+      </a><br/>
+      <sub><b>Prediction — Problem</b></sub>
+    </td>
+    <td align="center">
+      <a href="https://github.com/user-attachments/assets/b133fb2a-af29-4b96-a239-67fe9a736528">
+        <img src="https://github.com/user-attachments/assets/5fc82471-3e0b-4a1b-a065-70d39125e02f" width="400" />
+      </a><br/>
+      <sub><b>Prediction — Solution</b></sub>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
 
 ## 📢 News  
 - 🚀 [02/20/2026] The using instructions are added! 
