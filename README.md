@@ -65,20 +65,29 @@ We evaluate state-of-the-art Vision-Language Models in a zero-shot setting acros
 
 ## 🔧 Usage 
 
+### Installation
+```bash
+conda create --name mbb python=3.10
+conda activate mbb
+
+git clone git@github.com:nlylmz/mentalblackboard.git
+cd mentalblackboard
+pip install -r requirements.txt
+```
 ### Benchmark
 
-Our benchmark is hosted on HuggingFace. You can simply access the benchmark data using the following code.
+The MentalBlackboard dataset is hosted on HuggingFace. You can access the benchmark prediction and planning task data using the following codes.
 ```bash
-mentalBlackboard = load_dataset("nlylmz/MentalBlackboard", "planning")
-```
- or 
- ```bash
-mentalBlackboard = load_dataset("nlylmz/MentalBlackboard", "prediction")
+from datasets import load_dataset
+mbb_planning = load_dataset("nlylmz/MentalBlackboard", "planning")
+mbb_prediction = load_dataset("nlylmz/MentalBlackboard", "prediction")
+print(mbb_prediction["train"][0])
+print(mbb_planning["train"][0])
 ```
 <!--
 ### Dataset Generation
 
-To generate your PFT prediction questions, you need to run create_dataset.py which supports creating both training and testing datasets. You need to download the Train_Images and Test_Images folders to access the images required for generating questions.
+To generate your MentalBlackboard prediction questions, you need to run create_dataset.py, which supports creating both training and testing datasets. You need to download the Train_Images and Test_Images folders to access the images required for generating questions.
 
 Run the script using the following command:
 ```bash
@@ -90,13 +99,20 @@ json_output (str, required): Path to save the output CSV file.
 dataset (str, required): Choose between training or testing datasets.
 count (int, required): Total number of questions to generate. Ensure it is evenly divisible by the number of rules (7 or 19).
 ```
+-->
 ### Model Evaluation
 
 To evaluate models on MentalBlackboard, we provide the inference_test.py script, which downloads the MentalBlackboard dataset from Hugging Face and performs evaluation for the specified model. The model processes the input data, generates outputs, and saves the results in a JSON file.
 
+#### Prediction
 Run the script using the following command:
 ```bash
-python inference_test_MentalBlackboard.py --model_name <huggingface_pretrained_model>
+python inference_MentalBlackboard_prediction.py --model_name <huggingface_pretrained_model>
+```
+#### Planning
+Run the script using the following command:
+```bash
+python inference_MentalBlackboard_planning.py --model_name <huggingface_pretrained_model>
 ```
 
 #### Arguments: 
@@ -108,7 +124,7 @@ device_map (str, default: auto): Device mapping strategy (auto, cpu, cuda, etc.)
 max_new_tokens (int, default: 2048): Maximum number of new tokens to generate.
 temperature (float, default: 0.0): Controls randomness in text generation. Higher values produce more diverse outputs.
 ```
-
+<!--
 ### Scoring
 
 To score the results of VLMs, we provide the score_model_results.py script. This script processes inference results, compares them with ground truth data, generates evaluation outputs in JSONL format, and prints the scores for each step at the terminal. To access the ground truth data, you need to download the JSON file, which contains detailed information for each question. 
