@@ -102,7 +102,7 @@ count (int, required): Total number of questions to generate. Ensure it is evenl
 -->
 ### Model Evaluation
 
-To evaluate models on MentalBlackboard, we provide the inference_test.py script, which downloads the MentalBlackboard dataset from Hugging Face and performs evaluation for the specified model. The model processes the input data, generates outputs, and saves the results in a JSON file.
+To evaluate models on MentalBlackboard, we provide the inference_test.py script, which downloads the MentalBlackboard dataset from Hugging Face and performs evaluation for the specified model. The model processes the input data, generates outputs, and saves the results in a JSON file. Supported models for multimodal inputs: Qwen/Qwen2.5-VL-7B-Instruct, llava-hf/llava-onevision-qwen2-0.5b-ov-hf, and google/gemma-3-4b-it 
 
 #### Prediction
 Run the script using the following command:
