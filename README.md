@@ -84,25 +84,39 @@ mbb_prediction = load_dataset("nlylmz/MentalBlackboard", "prediction")
 print(mbb_prediction["train"][0])
 print(mbb_planning["train"][0])
 ```
-<!--
+
 ### Dataset Generation
 
-To generate your MentalBlackboard prediction questions, you need to run create_dataset.py, which supports creating both training and testing datasets. You need to download the Train_Images and Test_Images folders to access the images required for generating questions.
+#### Prediction and Planning
+To generate MentalBlackboard prediction and planning questions, run animate.py, which supports dataset creation for both tasks. Since prediction is the reverse process of planning, a single unified format is sufficient to generate data for both. You'll need to select the structure_group (how many folds and whether to include rotation), then enter the number of cases you'd like to generate. **The structure configuration includes one_step, two_step, three_step, four_step, two_step_with_rotation, three_step_with_rotation, four_step_with_rotation, five_step_with_rotation, and six_step_with_rotation.** 
+
+After the run completes, three folders will be created to store the outputs: **folding_frames**, **unfolding_frames**, and **prediction_results**, which contain the folding frames, unfolding frames, and final result images, respectively. The corresponding metadata will be saved in **MentalBlackboard_Prediction_Data.json**.
+
+**Note: The system captures frames by taking screenshots. Please ensure that only the animation is visible on the screen and avoid using or switching to other applications during the process.**
 
 Run the script using the following command:
 ```bash
-python create_dataset.py --csv_output <path_to_csv> --dataset <training/testing> --count <number>
+python animate.py prediction <structure_group> <count>
 ```
-#### Arguments: 
+
+#### Create Video
+To create the video from the generated folding and unfolding frames, run the command below:
+```bash
+python animate.py create_video
 ```
-json_output (str, required): Path to save the output CSV file.
-dataset (str, required): Choose between training or testing datasets.
-count (int, required): Total number of questions to generate. Ensure it is evenly divisible by the number of rules (7 or 19).
+Two folders will be created to store the output videos: **folding_videos** and **unfolding_videos**.
+
+#### Image - Text Mapping
+To generate the image and text representations of the task, run the following command and provide the metadata JSON file as a parameter:
+
+```bash
+python img_text_map.py <json_file_path>
 ```
--->
+Both image and text results will be saved under the **img_text_outputs** folder.
+
 ### Model Evaluation
 
-To evaluate models on MentalBlackboard, we provide the inference_test.py script, which downloads the MentalBlackboard dataset from Hugging Face and performs evaluation for the specified model. The model processes the input data, generates outputs, and saves the results in a JSON file. Supported models for multimodal inputs: Qwen/Qwen2.5-VL-7B-Instruct, llava-hf/llava-onevision-qwen2-0.5b-ov-hf, and google/gemma-3-4b-it 
+To evaluate models on MentalBlackboard, we provide the inference_test.py script, which downloads the MentalBlackboard dataset from Hugging Face and performs evaluation for the specified model. The model processes the input data, generates outputs, and saves the results in a JSON file. **Supported models for multimodal inputs: Qwen/Qwen2.5-VL-7B-Instruct, llava-hf/llava-onevision-qwen2-0.5b-ov-hf, and google/gemma-3-4b-it** 
 
 #### Prediction
 Run the script using the following command:
@@ -113,6 +127,10 @@ python inference_MentalBlackboard_prediction.py --model_name <huggingface_pretra
 Run the script using the following command:
 ```bash
 python inference_MentalBlackboard_planning.py --model_name <huggingface_pretrained_model>
+```
+Since planning tasks may have multiple valid solutions, we validate the model’s output by replaying it in the animation and verifying that it produces the correct final result. You need to enter the model's output as input_file parameter. To run the animation for the planning task, follow the command: 
+```bash
+python animate.py planning <input_file>
 ```
 
 #### Arguments: 
