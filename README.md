@@ -136,32 +136,8 @@ After running the animation, the model’s output must be compared against the g
 ```bash
 python planning_scoring.py <ground_truth_json> <model_result_json>
 ```
-<!--
-#### Arguments: 
-```
-model_name (str, required): Name of the pretrained model to use.
-dataset_name (str, default: nlylmz/MentalBlackboard): Name of the Hugging Face dataset to load.
-output_path (str, default: results.json): Path to save the output JSON file.
-device_map (str, default: auto): Device mapping strategy (auto, cpu, cuda, etc.).
-max_new_tokens (int, default: 2048): Maximum number of new tokens to generate.
-temperature (float, default: 0.0): Controls randomness in text generation. Higher values produce more diverse outputs.
-```
-<!--
-### Scoring
+Example: python planning_scoring.py PFHP_Planning_Data.json Qwen_Qwen2.5-VL-7B-Instruct_planning_results.json
 
-To score the results of VLMs, we provide the score_model_results.py script. This script processes inference results, compares them with ground truth data, generates evaluation outputs in JSONL format, and prints the scores for each step at the terminal. To access the ground truth data, you need to download the JSON file, which contains detailed information for each question. 
-
-Run the script using the following command:
-```bash
-python score_model_result.py --json_file_name <path_to_mllm_results> --csv_file_name <path_to_csv>
-```
-
-#### Arguments: 
-```
-json_file_name (str, required): Path to the JSON file containing MLLM inference results.
-batch_jsonl_file (str, default: "batch"): Path to save the generated JSONL file for batch processing.
-```
--->
 ## 🖋️ Citation  
 
 ```
