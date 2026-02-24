@@ -121,12 +121,12 @@ To evaluate models on MentalBlackboard, we provide the inference_test.py script,
 #### Prediction
 Run the script using the following command:
 ```bash
-python inference_MentalBlackboard_prediction.py --model_name <huggingface_pretrained_model>
+python run_MentalBlackboard_prediction.py --model_name <huggingface_pretrained_model>
 ```
 #### Planning
 Run the script using the following command:
 ```bash
-python inference_MentalBlackboard_planning.py --model_name <huggingface_pretrained_model>
+python run_MentalBlackboard_planning.py --model_name <huggingface_pretrained_model>
 ```
 Since planning tasks may have multiple valid solutions, we validate the model’s output by replaying it in the animation and verifying that it produces the correct final result. You need to enter the model's output as input_file parameter. The animation output will be saved to a file named **model_name_planning_results.json**. To run the animation for the planning task, follow the command: 
 ```bash
