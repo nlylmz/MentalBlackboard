@@ -128,9 +128,13 @@ Run the script using the following command:
 ```bash
 python inference_MentalBlackboard_planning.py --model_name <huggingface_pretrained_model>
 ```
-Since planning tasks may have multiple valid solutions, we validate the model’s output by replaying it in the animation and verifying that it produces the correct final result. You need to enter the model's output as input_file parameter. To run the animation for the planning task, follow the command: 
+Since planning tasks may have multiple valid solutions, we validate the model’s output by replaying it in the animation and verifying that it produces the correct final result. You need to enter the model's output as input_file parameter. The animation output will be saved to a file named **model_name_planning_results.json**. To run the animation for the planning task, follow the command: 
 ```bash
 python animate.py planning <input_file>
+```
+After running the animation, the model’s output must be compared against the ground-truth metadata. To perform the comparison, run the following command:
+```bash
+python planning_scoring.py <ground_truth_json> <model_result_json>
 ```
 <!--
 #### Arguments: 
