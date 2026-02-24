@@ -161,5 +161,14 @@ batch_jsonl_file (str, default: "batch"): Path to save the generated JSONL file 
 ## 🖋️ Citation  
 
 ```
+@misc{yilmaz2026mentalblackboardevaluatingspatialvisualization,
+      title={MentalBlackboard: Evaluating Spatial Visualization via Mathematical Transformations}, 
+      author={Nilay Yilmaz and Maitreya Patel and Naga Sai Abhiram Kusumba and Yixuan He and Yezhou Yang},
+      year={2026},
+      eprint={2602.19357},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2602.19357}, 
+}
 ```
 
