@@ -132,7 +132,7 @@ Since planning tasks may have multiple valid solutions, we validate the model’
 ```bash
 python animate.py planning <input_file>
 ```
-
+<!--
 #### Arguments: 
 ```
 model_name (str, required): Name of the pretrained model to use.
