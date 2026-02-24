@@ -1,6 +1,6 @@
 # MentalBlackboard : Evaluating Spatial Visualization Via Mathematical Transformations
 
-[![Paper](https://img.shields.io/badge/Paper-MentalBlackboard-blue)]() 
+[![Paper](https://img.shields.io/badge/Paper-MentalBlackboard-blue)](https://arxiv.org/abs/2602.19357) 
 [![Homepage](https://img.shields.io/badge/Website-MentalBlackboard-green)](https://mentalblackboard.github.io/) 
 [![Huggingface](https://img.shields.io/badge/Benchmark-MentalBlackboard-orange)](https://huggingface.co/datasets/nlylmz/MentalBlackboard)
 
