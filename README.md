@@ -64,7 +64,7 @@ We evaluate state-of-the-art Vision-Language Models in a zero-shot setting acros
 
 
 ## 🔧 Usage 
-
+<!--
 ### Installation
 ```bash
 conda create --name mbb python=3.10
@@ -74,6 +74,7 @@ git clone git@github.com:nlylmz/mentalblackboard.git
 cd mentalblackboard
 pip install -r requirements.txt
 ```
+-->
 ### Benchmark
 
 The MentalBlackboard dataset is hosted on HuggingFace. You can access the benchmark prediction and planning task data using the following codes.
