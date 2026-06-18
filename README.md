@@ -75,7 +75,7 @@ cd mentalblackboard
 pip install -r requirements.txt
 ```
 -->
-### Benchmark
+### Dataset
 
 The MentalBlackboard dataset is hosted on HuggingFace. You can access the benchmark prediction and planning task data using the following codes.
 ```bash
@@ -85,6 +85,11 @@ mbb_prediction = load_dataset("nlylmz/MentalBlackboard", "prediction")
 print(mbb_prediction["train"][0])
 print(mbb_planning["train"][0])
 ```
+
+The dataset is also available for download at the following link:
+
+https://drive.google.com/drive/folders/1C0-8aEZIjJIjbGAwEeYBHYgLgBWVQckY?usp=sharing
+
 
 ### Dataset Generation
 
