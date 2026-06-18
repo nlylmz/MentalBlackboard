@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mentalblackboard"
+version = "0.1.0"
+description = "Spatial visualization benchmark for paper-folding prediction and planning tasks."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "datasets>=2.18",
+  "huggingface-hub>=0.23",
+  "imageio>=2.34",
+  "matplotlib>=3.7",
+  "numpy>=1.24",
+  "pillow>=10.0",
+  "torch>=2.2",
+  "tqdm>=4.66",
+  "transformers>=4.45",
+  "vpython>=7.6",
+]
+
+[project.optional-dependencies]
+video = [
+  "av>=12.0",
+  "vllm>=0.6",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mentalblackboard*", "open_source_evals*"]
+namespaces = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
